@@ -1,0 +1,7 @@
+Data/
+Results/
+results/
+catboost_info/
+__pycache__/
+*.pkl
+*.pyc
