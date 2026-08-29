@@ -1,7 +1,6 @@
 Data/
-Results/
-results/
 catboost_info/
 __pycache__/
 *.pkl
 *.pyc
+Results/calgary_panel_final.csv

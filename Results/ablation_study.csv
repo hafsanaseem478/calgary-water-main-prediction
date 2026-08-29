@@ -1,0 +1,4 @@
+Feature set,AUC-ROC,PR-AUC,AnnLorenz@1% (fn),AnnLorenz@5% (fn)
+Full model (10 features),0.9161,0.0149,5.8,53.1
+No break history (8 features),0.899,0.0166,12.0,50.9
+History + age only (3 features),0.8576,0.0134,3.2,37.4
