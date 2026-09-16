@@ -10,7 +10,7 @@ Water utilities can renew only a small share of an ageing network each year, so 
 
 ## 3. Data
 
-The study uses publicly available infrastructure data for Calgary, Alberta. The network master contains **206,619 pipe segments**, with approximately **37,000 recorded breaks from 1956–2025**. Pipe geometry, material, diameter, installation year, break records, and pressure zones come from the City of Calgary Open Data portal. Surficial geology is from the Alberta Geological Survey and is simplified into broad soil classes.
+The study uses publicly available infrastructure data for Calgary, Alberta. The network master contains **206,619 pipe segments**. The July 2026 break snapshot produced **37,585 break–pipe matches within 20 m**; after excluding matches dated in or before the matched pipe's installation year, **15,727 breaks were attributed to pipes**. The retained break record spans **1956–2026**, while the independent model test period is **2019–2025**. Pipe geometry, material, diameter, installation year, break records, and pressure zones come from the City of Calgary Open Data portal. Surficial geology is from the Alberta Geological Survey and is simplified into broad soil classes.
 
 The 2019–2025 evaluation contains **1,434,067 pipe-years** and **1,222 positive pipe-years** (**0.0852%** prevalence).
 
@@ -20,7 +20,7 @@ Because the mains layer is a later snapshot, a pipe enters the historical risk s
 
 - Matched recorded breaks to the nearest pipe segment within 20 m, joined pressure-zone and surficial-geology information, and built annual pipe-level histories.
 - Constructed lagged predictors using only information available before each prediction year, including pipe age, material, diameter, length, spatial context, cumulative prior breaks, and time since last failure.
-- Compared XGBoost and CatBoost using a **pre-test validation period** and a pre-specified PR-AUC selection rule; CatBoost was selected before the 2019–2025 test years were evaluated.
+- Compared XGBoost and CatBoost on a **2017–2018 validation period inside the training era** using a pre-specified PR-AUC selection rule; CatBoost was selected before the 2019–2025 test years were evaluated.
 - Scored every eligible in-service pipe each test year and evaluated ranking performance using an annual-renewal Lorenz metric: the percentage of failures captured within the top 1%, 5%, and 10% of network length.
 - Tested robustness with pressure-zone block cross-validation, bootstrap uncertainty, break-history ablation, and material-stratified analysis.
 - Used SHAP for model interpretation, not causal inference.
@@ -104,7 +104,7 @@ python 08_interpretation.py
 3. Forero-Ortiz, E., Sanchez-Juny, M., Martinez-Gomariz, E., Cardus Gonzalez, J., Cucchietti, F., & Baque Viader, F. (2026). Near-future prediction of pipe failures in water supply networks: a key determinant for water pipe renewal policies through a machine learning approach. *Applied Water Science, 16*, 70.  
    https://doi.org/10.1007/s13201-025-02738-1
 
-4. Boloukasli ahmadgourabi, F., & Dziedzic, R. (2024). Developing an open repository of water main break prediction models in Kitchener. *Engineering Proceedings, 69*(1), 13.  
+4. Boloukasli Ahmadgourabi, F., & Dziedzic, R. (2024). Developing an open repository of water main break prediction models in Kitchener. *Engineering Proceedings, 69*(1), 13.  
    https://doi.org/10.3390/engproc2024069013
 
 5. Gharaati, S., & Dziedzic, R. (2024). Analysis of factors driving water main breaks across 13 Canadian utilities. *Environmental Systems Research, 13*, 9.  
@@ -113,3 +113,8 @@ python 08_interpretation.py
 6. Saito, T., & Rehmsmeier, M. (2015). The precision-recall plot is more informative than the ROC plot when evaluating binary classifiers on imbalanced datasets. *PLOS ONE, 10*(3), e0118432.  
    https://doi.org/10.1371/journal.pone.0118432
 
+## 9. Author and Contact
+
+**Hafsa Naseem**  
+Civil Engineer | Postgraduate Diploma in Data Science & AI  
+**Contact:** via the GitHub profile associated with this repository.
