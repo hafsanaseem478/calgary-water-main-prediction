@@ -1,4 +1,4 @@
-Feature set,AUC-ROC,PR-AUC,AnnLorenz@1% (fn),AnnLorenz@5% (fn)
-Full model (10 features),0.9161,0.0149,5.8,53.1
-No break history (8 features),0.899,0.0166,12.0,50.9
-History + age only (3 features),0.8576,0.0134,3.2,37.4
+Feature set,AUC-ROC (case-control test),PR-AUC (case-control test),AUC-ROC (full network),PR-AUC (full network),AnnLorenz@1% (fn),AnnLorenz@5% (fn),AnnLorenz@10% (fn)
+Full model (10 features),0.8878,0.0256,0.9148,0.009,17.9,53.0,76.4
+No break history (8 features),0.8912,0.0229,0.9238,0.0104,14.4,57.6,77.5
+History + age only (3 features),0.7185,0.0184,0.7581,0.0069,19.6,40.9,47.9

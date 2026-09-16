@@ -1,0 +1,3 @@
+Model,AUC-ROC (case-control test),PR-AUC (case-control test),"Lorenz@5% (count, case-control)"
+XGBoost,0.8878,0.0256,36.4
+CatBoost,0.8814,0.0275,39.3

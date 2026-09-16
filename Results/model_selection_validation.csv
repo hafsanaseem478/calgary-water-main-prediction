@@ -1,0 +1,3 @@
+Model,"PR-AUC (full network, validation)","AUC-ROC (full network, validation)",AnnLorenz@1% (validation),AnnLorenz@5% (validation),AnnLorenz@10% (validation),Selected
+XGBoost,0.0122,0.9027,17.3,48.5,71.2,0
+CatBoost,0.0131,0.8982,14.6,45.2,68.3,1

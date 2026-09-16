@@ -1,6 +1,27 @@
+# Raw input data
 Data/
-catboost_info/
-__pycache__/
-*.pkl
-*.pyc
+data/
+
+# Intermediate / regenerated files
+interim/
+interim_legacy/
+
+# Legacy comparison outputs
+results_legacy/
+
+# Large generated result tables
 Results/calgary_panel_final.csv
+Results/full_network_scores.csv
+
+# Python
+__pycache__/
+*.pyc
+*.pkl
+.venv/
+venv/
+catboost_info/
+
+# OS / editor
+.DS_Store
+Thumbs.db
+.vscode/

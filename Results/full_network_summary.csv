@@ -1,0 +1,15 @@
+Metric,Value
+Model,CatBoost
+Pipes,206619
+Pipe-years,1434067
+Failures,1222
+Base rate,0.000852
+Pooled AUC-ROC,0.9104
+Pooled PR-AUC,0.0113
+Pooled PR-AUC lift,13.2
+Annual Lorenz@1% mean,16.3
+Annual Lorenz@5% mean,49.5
+Annual Lorenz@10% mean,70.3
+Annual Lorenz@1% sd,1.7
+Annual Lorenz@5% sd,2.9
+Annual Lorenz@10% sd,4.0
