@@ -16,14 +16,14 @@ The 2019–2025 evaluation contains **1,434,067 pipe-years** and **1,222 positiv
 
 Because the mains layer is a later snapshot, a pipe enters the historical risk set **the year after installation**, and breaks dated in or before installation are excluded to reduce replacement-related temporal leakage.
 
-## 4. What I Did
+## 4. Methodology
 
-- Matched recorded breaks to the nearest pipe segment within 20 m, joined pressure-zone and surficial-geology information, and built annual pipe-level histories.
-- Constructed lagged predictors using only information available before each prediction year, including pipe age, material, diameter, length, spatial context, cumulative prior breaks, and time since last failure.
-- Compared XGBoost and CatBoost on a **2017–2018 validation period inside the training era** using a pre-specified PR-AUC selection rule; CatBoost was selected before the 2019–2025 test years were evaluated.
-- Scored every eligible in-service pipe each test year and evaluated ranking performance using an annual-renewal Lorenz metric: the percentage of failures captured within the top 1%, 5%, and 10% of network length.
-- Tested robustness with pressure-zone block cross-validation, bootstrap uncertainty, break-history ablation, and material-stratified analysis.
-- Used SHAP for model interpretation, not causal inference.
+Built a yearly pipe-level dataset by linking water-main breaks to nearby pipe segments and adding pressure-zone and geology information.
+Created predictors from pipe characteristics, location, age, and previous failure history while making sure only information available before each prediction year was used.
+Compared XGBoost and CatBoost on a 2017–2018 validation period, then selected CatBoost before evaluating the final 2019–2025 test years.
+Ranked all eligible in-service pipes each year and measured how many failures fell within the top 1%, 5%, and 10% of network length.
+Checked model robustness using bootstrap uncertainty, pressure-zone spatial cross-validation, break-history ablation, and material-specific analysis.
+Used SHAP to understand which features influenced model predictions and how those patterns differed between pipe materials.
 
 ## 5. Key Results
 
@@ -42,15 +42,15 @@ Annual AUC-ROC remained between **0.8975 and 0.9198** across the seven future te
 
 For 2019, the top 5% contained **54.7% of failures**; 500 bootstrap resamples gave a 95% interval of **48.1%–61.5%**.
 
-![Annual-renewal Lorenz curve for the 2019 full network](results/lorenz_curve.png)
+![Annual-renewal Lorenz curve for the 2019 full network](Results/lorenz_curve.png)
 
 The interpretation analysis shows that **material is the dominant model feature**, followed by geographic variables, pressure zone, age, and length.
 
-![Mean absolute SHAP value by feature](results/shap_bar.png)
+![Mean absolute SHAP value by feature](Results/shap_bar.png)
 
 Material-specific analysis showed stronger separation between broad risk groups than among individual cast-iron pipes.
 
-![Material-stratified SHAP comparison](results/shap_ci_vs_pvc.png)
+![Material-stratified SHAP comparison](Results/shap_ci_vs_pvc.png)
 
 ## 6. Reliability and Limitations
 
@@ -113,8 +113,4 @@ python 08_interpretation.py
 6. Saito, T., & Rehmsmeier, M. (2015). The precision-recall plot is more informative than the ROC plot when evaluating binary classifiers on imbalanced datasets. *PLOS ONE, 10*(3), e0118432.  
    https://doi.org/10.1371/journal.pone.0118432
 
-## 9. Author and Contact
 
-**Hafsa Naseem**  
-Civil Engineer | Postgraduate Diploma in Data Science & AI  
-**Contact:** via the GitHub profile associated with this repository.
